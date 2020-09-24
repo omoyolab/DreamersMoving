@@ -1,0 +1,47 @@
+{% load static %}
+
+<a href="javascript:" id="bottom-btn" class="p-2 text-center text-white"><i class="fa fa-angle-up"></i></a>
+<section class="py-2 bg-primary">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h5 class="text-white mb-0">Call Us Now 1-916-544-3349</h5>
+            </div>
+        </div>
+    </div>
+</section>
+<nav class="navbar navbar-expand-xl navbar-dark  shadow-sm py-2">
+    <div class="container">
+        <a class="navbar-brand py-0" href="/"><img src="{% static 'images/logo-r.png' %}" alt="" class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="{% static 'images/humburger.png' %}" alt="">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center justify-content-between dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services <i class="fa fa-angle-down pl-1"></i></a>
+                    <div class="dropdown-menu border-0 rounded-0 shadow" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="{% url 'services' %}">Residential Moving</a>
+                        <a class="dropdown-item" href="{% url 'apartment' %}">Apartment Moving</a>
+                        <a class="dropdown-item" href="{% url 'office_movi' %}">Office Moving servicee</a>
+                        <a class="dropdown-item" href="{% url 'packing' %}">Packing service</a>
+                        <a class="dropdown-item" href="{% url 'storage' %}">Storage Services</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'review' %}">Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                </li>
+            </ul>
+            <a href="{% url 'quote' %}" class="btn btn-secondary my-3 px-4 border-0  my-sm-0  rounded-pill text-white">Get Quote</a>
+        </div>
+    </div>
+</nav>

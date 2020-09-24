@@ -1,0 +1,314 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<header class="slider-container">
+    <div class="container-fluid px-0">
+        <div class="slider position-relative shadow-sm mb-0">
+            <div class="slide-slide--1">
+                <div class="container pt-4 pt-md-5">
+                    <div class="row mt-0 mt-md-2 mg-md-5 pt-md-0 pt-lg-3">
+                        <div class="col-12 col-md-8 back ">
+                            <h1 class="animated text-white hero_headline" data-animation-in="fadeInUp" data-delay-in="0.4">Move and transport absolutely any things anywhere.</h1>
+                            <h4 class="sub-heading animated text-white mt-0 mt-md-4" data-animation-in="fadeInUp" data-delay-in="0.6">No matter how many items you have to move, how far you’re moving, or what your timeline is.Dreamers Moving is your top choice for moving companies in Dallas Metroplex. We also help our customers with interstate moves.Now offering local, long-distance, and same-day moving services to residents and businesses</h4>
+                           
+                            <div class="mt-5 center">
+                                <a href="quote.html" class="btn btn-secondary animated shadow rounded-pill px-5 py-3" data-animation-in="fadeInUp" data-delay-in="0.7">Get Your Quote</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="row justify-content-center mx-0 shadow p-3 bg-quote py-5">
+                                <div class="col-12">
+
+                                    <div class="text-center">
+                                        <h2 class=" mb-4 font-weight-bold">GET A QUOTE</h2>
+                                    </div>
+                                    <form method="GET" action="{% url 'quote' %}">
+
+                                        <div class="row justify-content-center ">
+                                            <div class="col-12 mb-3">
+                                                <input type="text" class="form-control" name="full_name" placeholder="Full Name" required>
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <input type="text" class="form-control" name="from_zip" placeholder="From Zip code" required>
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <input type="text" class="form-control" name="to_zip" placeholder="To Zip Code " required>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button class="btn btn-primary border-0 px-5 py-3 rounded-pill w-100" type="submit">Continue</button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+<main>
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="{% static 'images/about.jpg' %}" alt="" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 mt-3 mt-md-0 generic_content">
+                    <p>Dreamers Moving Inc family-owned business proudly serving the Dallas/Fort Worth and Miami areas. Offering quality service at competitive rates, and a variety of services to fit your individual needs. Transparent pricing, excellent work, and positive client relationships are our top priority.</p>
+                    <p>Moving is almost always stressful, let us handle the heavy lifting so that you can focus on what matters to you. Moving companies have a pretty bad reputation, but we’re setting out to change just that- one move at a time.</p>
+                    <div class="text-center">
+                      <a href="about.html">  <button class="btn btn-secondary rounded-pill px-5 py-3">Know more</button></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-5 why-choose-us bg-light">
+        <div class="container container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-9 text-center">
+                    <h2 class="text-uppercase">Offering you the best solution for your perfect moving</h2>
+                    <h4>We are constantly working to raise the bar on our services. If you have any questions or concerns about your experience, please let us know. Our customers support is available 24/7.</h4>
+                    <h4>We do a lot of business interstate in California, Nevada, Texas, New York and Washington state at affordable rates</h4>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 col-lg-4 mb-3 mb-md-4 mb-md-0">
+                    <div class="card border-0 shadow text-center align-items-center pt-4">
+                        <img src="https://purpleheartmovinggroup.com/wp-content/uploads/2018/04/underheader1-1.png" alt="">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold">Always open for you</h5>
+                            <p>
+                                We are ready to move you into your next living space, no matter the size or the distance. We are experts in apartment moves, we can maneuver any hallway, staircase, or elevator and meet your needs
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3 mb-md-4  mb-md-0">
+                    <div class="card border-0 shadow text-center align-items-center pt-4">
+                        <img src="https://purpleheartmovinggroup.com/wp-content/uploads/2018/04/underheader2-1.png" alt="">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold">Unbeatable prices</h5>
+                            <p>
+                                Dreamers Moving is a family-owned and operated Texas moving in the Dallas. We have been providing quality local moving services at affordable prices to commercial, residential, and apartment communities for years.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-3 mb-md-4  mb-md-0">
+                    <div class="card border-0 shadow text-center align-items-center pt-4">
+                        <img src="https://purpleheartmovinggroup.com/wp-content/uploads/2018/04/underheader3-1.png" class="img-fluid w-auto" alt="">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold">Professionally qualified</h5>
+                            <p>
+
+                                We strive to be the best at everything we do, and this type of training is imperative to our success. We know they are ready to go out into our customers’ homes and do a great job for them!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+    <section class="get-quote py-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-12 col-md-7 text-center text-md-left">
+                    <h2 class="text-white text-uppercase mb-0">Ready to get started?</h2>
+                </div>
+                <div class="col-12 col-md-5 text-center text-md-right mt-4 mt-md-0">
+                    <a href="quote.html" class="btn btn-secondary bg-white text-dark rounded-pill border-0 px-5 py-3 shadow">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=" py-5 services">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 col-md-9 text-center">
+                    <h2 class="text-uppercase">The services we provide</h2>
+
+                </div>
+            </div>
+
+            <div class="row mt-5 pt-4">
+                <div class="col-12 col-md-3 mb-5 mb-md-4">
+                    <div class="card shadow-sm border-0 rounded-0 pb-3">
+                        <div class="service-icon bg-white mx-auto  d-flex justify-content-center align-items-center">
+                            <img src="{% static 'images/cabin.png' %}" alt="">
+                        </div>
+                        <div class="card-body text-center  p-2">
+                            <h5 class="card-title  font-italic font-weight-bold">Residential Moving</h5>
+                            <p class="card-text">Our residential relocation services includes apartments, condos, townhomes, homes, and more.</p>
+                            <a href="services.html" class="btn btn-secondary rounded-pill">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-5 mb-md-4">
+                    <div class="card shadow-sm border-0 pb-3 rounded-0">
+                        <div class="service-icon bg-white mx-auto  d-flex justify-content-center align-items-center">
+                            <img src="{% static 'images/apartment.png' %}" alt="">
+                        </div>
+                        <div class="card-body text-center  p-2">
+                            <h5 class="card-title font-italic font-weight-bold">Packaging Services </h5>
+                            <p class="card-text">Packing can be one of the most stressful parts of relocation. We have professionals that can help</p>
+                            <a href="#" class="btn btn-secondary rounded-pill">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-5 mb-md-4">
+                    <div class="card shadow-sm border-0 pb-3 rounded-0">
+                        <div class="service-icon bg-white mx-auto  d-flex justify-content-center align-items-center">
+                            <img src="{% static 'images/teamwork.png' %}" alt="">
+                        </div>
+                        <div class="card-body text-center  p-2">
+                            <h5 class="card-title font-italic font-weight-bold">Office Moving service</h5>
+                            <p class="card-text">If you are moving offices across the street or the DFW metroplex, we can help. Get a free estimate today!</p>
+                            <a href="#" class="btn btn-secondary rounded-pill">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mb-5 mb-md-4">
+                    <div class="card shadow-sm border-0 pb-3 rounded-0">
+                        <div class="service-icon bg-white mx-auto  d-flex justify-content-center align-items-center">
+                            <img src="{% static 'images/box.png' %}" alt="">
+                        </div>
+                        <div class="card-body text-center  p-2">
+                            <h5 class="card-title  font-italic font-weight-bold">Storage Service</h5>
+                            <p class="card-text">We offer storage services at an affordable cost in case you need to store your items until you are ready to move</p>
+                            <a href="#" class="btn btn-secondary rounded-pill">Know More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-uppercase">What Our Clients Say</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5 mx-0">
+                <div class="col-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 text-center bg-white py-3 rounded-lg px-3 px-md-5">
+                    <div class="client-for pt-4">
+                        {% for review in reviews %}
+                        <div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <!-- <img src="{% static 'images/avtar.png' %}" alt="" class="img-fluid d-block m-auto testimonial-img rounded-circle"> -->
+                                    <p class="font-italic mt-2">{{ review.text }}</p>
+                                    <h6 class="sub-heading">{{ review.author_name }}</h6>
+                                    <h5 class="small-heading font-weight-bold font-italic">{{ review.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="text-uppercase">Our Clients</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5 mx-0">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 bg-white shadow rounded-0">
+                    <div class="client-logo">
+                        <div class="border">
+                            <img src="images/logo/activate-media.png" alt="" class="img-fluid d-block m-auto">
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/Agri-pro-focus.png" alt="" class="img-fluid d-block m-auto">
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/Buddyhub.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/Cardekho.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/dominos.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+
+                        <div class="border">
+                            <img src="images/logo/Dunkin-Donuts.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/Floweraura.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/goodmorning.png" alt="" class="img-fluid d-block m-auto">
+
+                        </div>
+                        <div class="border">
+                            <img src="images/logo/Jamba-juice.png" alt="" class="img-fluid d-block m-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center">Military Special</h2>
+            <div>
+                <div class="row">
+                    <div class="col-12 col-md-12">
+
+                        <p class="font-italic mt-2">We understand that moving can be difficult and may happen very often for the men and women in uniform so we are here to help!. We offer special discounts for members of the armed forces and help you as much as we can to make your moving experience an easy one. Learn more about our latest special offers</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center">
+                <a href="#" class="btn btn-secondary rounded-pill">Learn More</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!--
+      <section class="get-quote py-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-12 col-md-7 text-center text-md-left">
+                    <h2 class="text-white text-uppercase mb-0">Ready to get started?</h2>
+                </div>
+                <div class="col-12 col-md-5 text-center text-md-right mt-4 mt-md-0">
+                    <a href="contact.html" class="btn btn-secondary bg-white text-dark rounded-pill border-0 px-5 py-3 shadow">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+</main>
+
+{% endblock content %}

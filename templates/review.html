@@ -1,0 +1,166 @@
+{% extends '_base.html' %}
+{% load static starer %}
+
+{% block content %}
+
+
+<header class="contact-us-banner">
+    <div class="container pt-0 pt-md-5">
+        <div class="row mt-0 mt-md-5 pt-5">
+            <div class="col-12 col-md-12 text-center">
+
+                <div class="text-center mb-3">
+                    <button type="button" class="btn review-btn" data-toggle="modal" data-target="#review">
+                        <i class="fa fa-star" aria-hidden="true"></i> Write a Review
+                    </button>
+                </div>
+
+                <h1 class="text-uppercase">Reviews for dreamers moving 
+                </h1>
+                <h4 class="sub-heading animated mt-0 mt-md-4">We are here to make easy!</h4>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+               {% for rev in reviews %}
+
+                <div class="col-12 col-sm-12 col-md-5 mb-3 mb-md-3">
+                    <div class="review rounded-lg position-relative text-left bg-white p-3 shadow">
+                        <i class="fa fa-quote-left position-absolute" aria-hidden="true"></i>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="font-italic line-clamp review-text">{{ rev.text }}</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-start">
+                            <div class="col-2">
+                                <!-- <img src="{% static 'images/avtar.png' %}" alt="" class="img-fluid"> -->
+                            </div>
+                            <div class="col-5 pl-0 text-left">
+                                <h6 class="small-heading font-weight-bold font-italic mb-0">- {{ rev.author_name }}</h6>
+                                <p class="sub-heading mb-0">{{ rev.title }}</p>
+                            </div>
+                            <div class="col-5 text-left">
+                                <div>
+                                    {% review rev.stars as class_list %}
+                                    {% for class in class_list %}
+                                        <i class="fa {{ class }}" aria-hidden="true"></i>
+                                    {% endfor %}
+                                    <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-half-o" aria-hidden="true"></i> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               {% endfor %}
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="btn btn-secondary rounded-pill px-5 py-3">load More</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-map py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-7 text-center">
+                    <h4 class="font-weight-bold">Ready to get in touch? Contact us now</h4>
+                    <h5 class="mt-3">With our customer resolution center,
+                        our expert team is available 9AM to 6PM - Monday to Friday
+                        to answer any questions and assist.</h5>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 col-md-4">
+                            <i class="fa fa-phone display-2"></i>
+                            <p class="font-weight-bold text-white"> +1(214) 2843377</p>
+                            <a href="contact.html" class="btn btn-secondary w-100 d-block rounded-pill px-3 px-md-5 py-3">Contact us</a>
+                            Click here for Contact
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <i class="fa fa-truck"></i>
+                            <p class="font-weight-bold text-white"> +1(214) 2843377</p>
+                            <a href="quote.html" class="btn btn-secondary d-block w-100 rounded-pill  px-3 px-md-5 py-3">Get Quote</a>
+                            Click here for Request
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<!-- modal  -->
+<div class="modal fade" id="review" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Write a Review</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class='rating-stars text-center'>
+                <ul id='stars'>
+                  <li class='star' title='Poor' data-value='1'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Fair' data-value='2'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Good' data-value='3'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='Excellent' data-value='4'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                  <li class='star' title='WOW!!!' data-value='5'>
+                    <i class='fa fa-star fa-fw'></i>
+                  </li>
+                </ul>
+            </div>
+            
+            <form method="POST">
+                {% csrf_token %}
+
+                <input type="hidden" value="3" name="stars">
+                <div class="form-group">
+                    <textarea class="form-control" name="text" placeholder="It's amazing that they've added delivery due to rush hour. They deliver......" rows="5"></textarea>
+                </div>
+
+                <div class="col-12  col-md-12">
+                    <div class="form-group">
+                        <input type="text" name="author_name" class="form-control" placeholder="Full Name">
+                    </div>
+                </div>
+                <div class="col-12  col-md-12">
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="Professional Title">
+                    </div>
+                </div>
+
+
+               <div class="text-center">
+                <button class="btn review-btn">Post Review</button>
+               </div>
+            </form>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+
+{% endblock content %}

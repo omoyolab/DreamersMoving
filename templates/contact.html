@@ -1,0 +1,250 @@
+{% extends '_base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<header class="contact-us-banner">
+    <div class="container pt-0 pt-md-5">
+        <div class="row mt-0 mt-md-5 pt-5">
+            <div class="col-12 col-md-12 text-center">
+                <h1 class="text-uppercase">Contact Us
+                </h1>
+                <h4 class="sub-heading  mt-0 mt-md-4">We would love to hear from you</h4>
+
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+
+    <section class="py-5 contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Send us a Message</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-uppercase" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Send a Request</a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="row form-container align-items-stratch">
+                                <div class="col-12 col-sm-12 col-md-6">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <div class="shadow rounded-0 py-4 bg-white">
+                                            <div class="row mx-0 mb-3">
+                                                <div class="col-12">
+                                                    <h4 class="font-weight-bold">SENS US A MASSEGE</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mx-0">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="first_name" class="form-control" placeholder="First Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="email" class="form-control" placeholder="Email Id">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="mobile" class="form-control" placeholder="Mobile Number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" name="body" placeholder="First Name" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mx-0 mt-2">
+                                                <div class="col-12 text-center mt-1">
+                                                    <button class="btn btn-secondary rounded-pill px-5 py-3">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-12 col-sm-12 col-md-6">
+                                    <div class="shadow">
+                                        <img src="{% static 'images/contact.jpg' %}" alt="img" class="img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="row form-container align-items-stratch">
+                                <div class="col-12 col-sm-12 col-md-12">
+                                    <form action="{% url 'quote' %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="shadow bg-white rounded py-4">
+                                            <div class="row mx-0 mb-3">
+                                                <div class="col-12">
+                                                    <h4 class="font-weight-bold">SENS US A REQUEST</h4>
+                                                </div>
+                                            </div>
+                                            <div class="row mx-0">
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="full_name" value="{{ request.GET.full_name }}" class="form-control" placeholder="Full Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12  col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="email" class="form-control" placeholder="Email Id">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12  col-md-6">
+                                                    <div class="form-group">
+                                                        <input type="text" name="phone" class="form-control" placeholder="Mobile Number">
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6">
+                                                    <div class="form-group">
+                                                        <input name="date" type="date" class="form-control">
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" name="from_zip" value="{{ request.GET.from_zip }}" class="form-control" placeholder="Enter zip code moving from">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 ">
+                                                                    <div class="form-group">
+                                                                        <input type="text" name="square_footage" class="form-control" placeholder="Enter the square footage">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12 ">
+                                                                    <label class="form-check-label d-flex font-weight-bold">Is there an elevator?</label>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input class="form-check-input" name="is_elevator" type="checkbox" id="inlineCheckbox3">
+                                                                        <label class="form-check-label" for="inlineCheckbox3">Yes</label>
+                                                                    </div>
+                                                                </div>
+                
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" value="{{ request.GET.to_zip }}" class="form-control" placeholder="Enter zip code moving to">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <input type="text" name="floor" class="form-control" placeholder="Enter what floor your reside">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12  mt-2">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" name="amount" placeholder="Enter the amount of items" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <input type="text" name="hear_about_us" class="form-control" placeholder="How did you hear about us?">
+                                                    </div>
+                                                </div>
+                
+                
+                                            </div>
+                                            <div class="row mx-0 mt-2">
+                                                <div class="col-12 text-center mt-1">
+                                                    <button class="btn btn-secondary rounded-pill px-5 py-3">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="shadow rounded-0">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3487564.5657776045!2d32.83738098219102!3d31.39139484779757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1500492432a7c98b%3A0x6a6b422013352cba!2sIsrael!5e0!3m2!1sen!2sin!4v1597167603097!5m2!1sen!2sin" class="w-100 d-block" style="border:0; min-height: 400px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 mt-4 mt-md-0">
+                    <div class="bg-white shadow h-100 rounded-0 p-4">
+                        <h4 class="font-weight-bold">DROP IN OUR OFFICE</h4>
+                        <p>Do you have more questions not related to pricing or estimates?Drop in by our office and meet our staff for more information </p>
+                        <p>
+                            <span class="ml-2"><i class="fa fa-book"> </i> 123 Main Street, New York, NY 10030</span></p>
+                        <p>
+
+                            <span class="ml-2"><i class="fa fa-envelope"> </i> info@dreamersmoving.com</span></p>
+                        <p>
+                            <span class="ml-2"> <i class="fa fa-phone"> </i> (916)5443349 ,(775)4502597</span></p>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-map py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-7 text-center">
+                    <h4 class="font-weight-bold">Ready to get in touch? Contact us now</h4>
+                    <h5 class="mt-3">With our customer resolution center, our expert team is available 9AM to 6PM - Monday to Friday to answer any questions and assist.</h5>
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-6 col-md-4">
+                            <i class="fa fa-phone display-2"></i>
+                            <p class="font-weight-bold text-white"> +1(916) 5443349</p>
+                            <a href="contact.html" class="btn btn-secondary w-100 d-block rounded-pill px-3 px-md-5 py-3">Contact us</a> Click here for Contact
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <i class="fa fa-truck"></i>
+                            <p class="font-weight-bold text-white"> +1(775) 4502597</p>
+                            <a href="quote.html" class="btn btn-secondary d-block w-100 rounded-pill  px-3 px-md-5 py-3">Get Quote</a> Click here for Request
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}
