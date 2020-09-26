@@ -17,12 +17,12 @@
                 <div class="ml-0 ml-md-5">
                     <h5>QUICK LINKS</h5>
                     <ul class="pl-0">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="review.html">Review</a></li>
-                        <li><a href="#">Get Quote</a></li>
-                        <li><a href="contact.html">Contact us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'services' %}">Services</a></li>
+                        <li><a href="{% url 'review' %}">Review</a></li>
+                        <li><a href="{% url 'quote' %}">Get Quote</a></li>
+                        <li><a href="{% url 'contact' %}">Contact us</a></li>
                     </ul>
                 </div>
             </div>
