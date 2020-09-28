@@ -89,7 +89,7 @@ def quote(request):
             except BadHeaderError:
                 return HttpResponse("Your request is faild")
 
-            messages.success(request, 'Your have received your request, we will back to you shortly!', extra_tags='alert alert-success')
+            messages.success(request, 'We have received your request, we will back to you shortly!', extra_tags='alert alert-success')
             return redirect('home')
         else:
             messages.error(request, 'Oopps ! an error occured, please try again', extra_tags='alert alert-danger')
