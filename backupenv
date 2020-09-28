@@ -2,3 +2,8 @@ db_user=postgres
 db_name=tape
 db_password=postgres
 db_host=localhost
+
+# email
+EMAIL_HOST=smtp.gmail.com
+EMAIL_HOST_USER=test@gmail.com
+EMAIL_HOST_PASSWORD=Your Password

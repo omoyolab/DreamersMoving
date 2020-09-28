@@ -178,3 +178,14 @@ WAGTAIL_SITE_NAME = "projectile"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+
+# Email Configration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER') #sender's email-id 
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') #password associated with above email-id 
+
