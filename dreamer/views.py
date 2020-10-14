@@ -79,15 +79,15 @@ def quote(request):
                     floor=form.floor,
                     square=form.square_footage
             )
-            try:
-                send_mail(
-                    subject,
-                    body,
-                    settings.EMAIL_HOST_USER, # From mail
-                    [form.email], #to mail
-                )
-            except BadHeaderError:
-                return HttpResponse("Your request is faild")
+            # try:
+            #     send_mail(
+            #         subject,
+            #         body,
+            #         settings.EMAIL_HOST_USER, # From mail
+            #         [form.email], #to mail
+            #     )
+            # except BadHeaderError:
+            #     return HttpResponse("Your request is faild")
 
             messages.success(request, 'We have received your request, we will back to you shortly!', extra_tags='alert alert-success')
             return redirect('home')
